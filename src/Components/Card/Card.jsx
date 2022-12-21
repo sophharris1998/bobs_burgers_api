@@ -1,13 +1,15 @@
 import React from "react";
 import "./Card.scss";
 
-const Card = () => {
+const Card = ({ name, image, gender, hairColor }) => {
   return (
-    <div>
-      <h2> Name </h2>
-      <img src="" alt="" />
-      <h3> Gender </h3>
-      <h3> Hair Color </h3>
+    <div className="char-card">
+      <img className="char-card__image" src={image} alt={name} />
+      <div className="char-card__content">
+        <h2 className="char-card__heading"> {name} </h2>
+        <h3 className="char-card__gender"> {gender} </h3>
+        <h3 className="char-card__hairColor">{hairColor} </h3>
+      </div>
     </div>
   );
 };

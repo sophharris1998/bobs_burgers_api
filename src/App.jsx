@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.scss";
 import Button from "./Components/Button/Button";
+import Card from "./Components/Card/Card";
 
 const App = () => {
   const [user, setUser] = useState();
@@ -17,6 +18,7 @@ const App = () => {
     <div className="app">
       <h1> Bobs Burgers </h1>
       <Button label="Get Random Character" onClick={getUser} />
+      <Card />
     </div>
   );
 };
