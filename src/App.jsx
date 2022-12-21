@@ -1,13 +1,16 @@
+import { useState } from "react";
 import "./App.scss";
 import Button from "./Components/Button/Button";
 
 const App = () => {
+  const [user, setUser] = useState();
+
   const getUser = async () => {
     const response = await fetch(
       "https://bobsburgers-api.herokuapp.com/characters/"
     );
     const data = await response.json();
-    console.log(data[4]);
+    setUser(data[0]);
   };
 
   return (
