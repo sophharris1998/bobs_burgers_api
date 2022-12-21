@@ -1,23 +1,19 @@
 import "./App.scss";
-import Characters from "./Container/Characters/Characters";
-import {useState, useEffect}
+import Button from "./Components/Button/Button";
 
 const App = () => {
-  const getCharacters = async () => {
+  const getUser = async () => {
     const response = await fetch(
-      "https://bobsburgers-api.herokuapp.com/characters/?limit=9&skip=432"
+      "https://bobsburgers-api.herokuapp.com/characters/"
     );
     const data = await response.json();
+    console.log(data[4]);
   };
 
-  useEffect(() => {
-    getCharacters();
-  }, []);
-
   return (
-    <div className="App">
-      <h1> Bob's Burgers </h1>
-      <Characters />
+    <div className="app">
+      <h1> Bobs Burgers </h1>
+      <Button label="Get Random Character" onClick={getUser} />
     </div>
   );
 };
