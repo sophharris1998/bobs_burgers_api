@@ -11,7 +11,9 @@ const App = () => {
       "https://bobsburgers-api.herokuapp.com/characters/"
     );
     const data = await response.json();
-    setChar(data[Math.floor(Math.random() * data.length)]);
+    var randomChar = Math.floor(Math.random() * data.length);
+    setChar(data.results.slice(randomChar, randomChar + 3));
+    console.log(char);
   };
 
   return (
