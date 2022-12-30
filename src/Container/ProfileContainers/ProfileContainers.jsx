@@ -1,4 +1,5 @@
 import Card from "../../Components/Card/Card";
+import "./ProfileContainers.scss";
 
 const ProfileContainers = ({ profiles }) => {
   const CardJSX = profiles.map((element) => {
